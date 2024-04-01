@@ -1,0 +1,42 @@
+{{>partials/header}}
+
+Opa, tudo joia cria? {{ user.name }}
+
+{{#showOld}}
+    Como vai a vida?
+{{/showOld}}
+
+{{^showOld}}
+    Beleza? de menor
+{{/showOld}}
+
+<hr/>
+<h2>Produtos</h2>
+<ul>
+    {{#products}}
+        {{>partials/productItem}}
+    {{/products}}
+</ul>
+
+<hr/>
+<h2>Produtos Caros</h2>
+<ul>
+    {{#expensives}}
+        {{>partials/productItem}}
+    {{/expensives}}
+</ul>
+
+
+<hr/>
+
+<ul>
+    {{#frasesDoDia}}
+        <li>{{.}}</li>
+    {{/frasesDoDia}}
+
+    {{^frasesDoDia}}
+        Não há frases do dia!
+    {{/frasesDoDia}}
+</ul>
+
+{{>partials/footer}}
